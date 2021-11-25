@@ -10,7 +10,7 @@
 <body>
     <div class="auth">
         <div class="auth-container">
-          <form action="" method="post" class="auth-form">
+          <form action="{{ url_for('register') }}" method="post" class="auth-form">
             <h1>Sign in</h1>
             <div class="auth-input ">
               <label for="firstname">
@@ -45,7 +45,7 @@
             <button type="submit" name="submit" class="auth-btn">Sign in</button>
           </form>
           <div class="auth-bottom">
-            Have an account yet? <a href="{{ url_for('Login') }}"> Login Now</a>
+            Have an account yet? <a href="{{ url_for('login') }}"> Login Now</a>
           </div>
         </div>
       </div>

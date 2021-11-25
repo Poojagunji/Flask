@@ -9,8 +9,8 @@
           </div>
         </div>
         <form class="login-form" method="post" action="{{url_for('login')}}">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
+          <input type="text" name="username" placeholder="username"/>
+          <input type="password" name="password" placeholder="password"/>
           <button>login</button>
           <p class="message">Not registered? <a href="{{ url_for('register') }}">Register an account</a></p>
         </form>
