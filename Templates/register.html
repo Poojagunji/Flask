@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/register.css') }}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="auth">
+        <div class="auth-container">
+          <form action="" method="post" class="auth-form">
+            <h1>Sign in</h1>
+            <div class="auth-input ">
+              <label for="firstname">
+                firstname
+              </label>
+              <input type="text" name="firstname" id="firstname" />
+            </div>
+            <div class="auth-input ">
+                <label for="firstname">
+                  lastname
+                </label>
+                <input type="text" name="lastname" id="lastname" />
+              </div>
+              <div class="auth-input ">
+                <label for="email">
+                  email
+                </label>
+                <input type="email" name="email" id="email" />
+              </div>
+            <div class="auth-input">
+              <label for="password">
+                Password
+              </label>
+              <input type="password" name="password" id="password" />
+            </div>
+            <div class="auth-input">
+                <label for="password">
+                  confirmPassword
+                </label>
+                <input type="password" name="confirmPassword" id="confirmPassword" />
+              </div>
+            <button type="submit" name="submit" class="auth-btn">Sign in</button>
+          </form>
+          <div class="auth-bottom">
+            Have an account yet? <a href="{{ url_for('Login') }}"> Login Now</a>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
