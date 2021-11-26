@@ -26,10 +26,10 @@ def login():
     print(username,password)
     finding=records.find_one({"email":username,"password":password})
     if(finding):
-        return "data found"
+        return render_template('dashboard.html')
     else:
-        return "not found"
-    return ""
+        return " user not found"
+    
 
 @app.route('/login')
 def reg():
@@ -40,7 +40,7 @@ def dash():
     return render_template("dashboard.html")
 
 
-    
+
 @app.route('/register',methods=["GET","POST" ,])
 def register():
     firstname=request.form.get("firstname")
