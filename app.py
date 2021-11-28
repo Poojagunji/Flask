@@ -7,7 +7,7 @@ app = Flask(__name__)
 # db = client.get_database('total_records')
 # records = db.register
 
-mongo_client = PyMongo(app,uri="mongodb+srv://pooja:pooja2000@cluster0.krtlz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongo_client = PyMongo(app, uri="mongodb+srv://pooja:pooja2000@cluster0.krtlz.mongodb.net/total_records?retryWrites=true&w=majority")
 db = mongo_client.db
 records = db.register
 
@@ -62,29 +62,34 @@ def register():
 def forgotpassword():
     return render_template("forgotpassword.html")
 
-@app.route('/blogpage',methods=['GET','POST'])
+@app.route('/postpage',methods=['GET','POST'])
 def blogpage():
      
     if(request.method=='POST'):
         if(request.form):
-            name = request.form.get("blogName")
-            story = request.form.get("story")
-            ID = request.form.get("id")
-            print(name)
-            print(story)
-            print(ID)
-            records.insert_one({"name":name,"story":story,"id":id})
+            print(dict(request.form))
+            records.insert_one(dict(request.form))
             return "posted successfully"
         else:
            return "please fill all fields" 
     return render_template('blogpage.html')
 
-@app.route('blogsdashboard')
+@app.route('/blogsdashboard',methods=['GET'])
 def dashboard():
     return render_template('blogsdashboard.html')
+
+
+@app.route('/updatepage')
+def update():
+    return "update page"
+
+@app.route('/deletepage')
+def delete():
+    return "Delete page"
 
 
 if __name__=='__main__':
     app.secret_key='secretivekeyagain'
     app.run(debug=True)
 
+ 
